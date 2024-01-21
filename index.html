@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mad Lib Beta</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <div class="header">
+        <p>Input your words below:</p>
+    </div>
+    <div class="inputForm">
+        <form id="form">
+            <label for="adjective">Adjective</label><br />
+            <input type="text" id="adjective" class="text" /><br />
+            <label for="noun">Noun</label><br />
+            <input type="text" id="noun" class="text" /><br />
+            <label for="verb">Verb</label><br />
+            <input type="text" id="verb" class="text" />
+            <br /><br />
+            <button type="button" onclick="madInput()">Submit My MadLib</button>
+            <button type="reset" id="reset" onclick="clearArray()">Reset</button>
+        </form>
+    </div>
+    <div class="complete">
+        <h2 class="madlibhead">Check out your completed MadLib!</h2>
+        <div id="final" style="display: none">
+            <p>
+                I went to the <span id="word1"></span> forest to find the
+                <span id="word2"></span> so I could <span id="word3"></span>
+                with it...
+            </p>
+        </div>
+    </div>
+    <script>
+        let inputArray = [];
+
+        function madInput() {
+            let adjective = document.getElementById('adjective');
+            let noun = document.getElementById('noun');
+            let verb = document.getElementById('verb');
+
+            let value1 = adjective.value;
+            let value2 = noun.value;
+            let value3 = verb.value;
+
+            inputArray.push(value1, value2, value3);
+            document.getElementById('word1').innerHTML = value1;
+            document.getElementById('word2').innerHTML = value2;
+            document.getElementById('word3').innerHTML = value3;
+
+            toggleDiv();
+        }
+
+        function clearArray() {
+            inputArray.length = 0;
+            document.getElementById('word1').innerHTML = '';
+            document.getElementById('word2').innerHTML = '';
+            document.getElementById('word3').innerHTML = '';
+            toggleDiv();
+        }
+
+        function toggleDiv() {
+            var div = document.getElementById('final');
+            div.style.display = div.style.display == 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>
