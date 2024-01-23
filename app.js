@@ -14,7 +14,7 @@ function madInput() {
   document.getElementById("word2").innerHTML = value2;
   document.getElementById("word3").innerHTML = value3;
 
-  toggleDiv();
+  toggleDivOn();
 }
 
 function clearArray() {
@@ -22,10 +22,17 @@ function clearArray() {
   document.getElementById("word1").innerHTML = "";
   document.getElementById("word2").innerHTML = "";
   document.getElementById("word3").innerHTML = "";
-  toggleDiv();
+  toggleDivOff();
 }
 
-function toggleDiv() {
+function toggleDivOn() {
   let div = document.getElementById("final");
-  div.style.display = div.style.display == "none" ? "block" : "none";
+  if ((inputArray.length = 0)) {
+    div.style.display = "none";
+  } else div.style.display = div.style.display == "none" ? "block" : "block";
+}
+
+function toggleDivOff() {
+  let div = document.getElementById("final");
+  div.style.display = div.style.display == "block" ? "none" : "none";
 }
