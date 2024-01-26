@@ -12,8 +12,6 @@ function madInput() {
   } else {
     alert("Your LIB isn't MAD enough!");
   }
-
-  //toggleDivOn();
 }
 
 function generateMadLib(inputArray) {
@@ -29,5 +27,5 @@ function generateMadLib(inputArray) {
 }
 
 function clearArray() {
-  inputArray.length = 0;
+  inputArray = [];
 }
