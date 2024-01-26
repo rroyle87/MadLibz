@@ -14,6 +14,13 @@ function madInput() {
   }
 }
 
+const form = document.getElementById("form");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the default form submission
+  madInput(); // Call your madInput function
+});
+
 function generateMadLib(inputArray) {
   if (inputArray.length > 0) {
     let madLibString =
@@ -28,4 +35,11 @@ function generateMadLib(inputArray) {
 
 function clearArray() {
   document.getElementById("form").reset();
+  document.getElementById("final").innerHTML = "";
 }
+
+const resetButton = document.getElementById("resetButton");
+
+resetButton.addEventListener("click", function () {
+  clearArray(); // Call your clearArray function
+});
