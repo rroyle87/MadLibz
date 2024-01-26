@@ -19,17 +19,15 @@
             <p>Input your words below:</p>
         </div>
         <div class="inputForm">
-            <form id="form">
-                <label for="adjective">Adjective</label><br />
-                <input type="text" id="adjective" class="text" /><br />
-                <label for="noun">Noun</label><br />
-                <input type="text" id="noun" class="text" /><br />
-                <label for="verb">Verb</label><br />
-                <input type="text" id="verb" class="text" />
-                <br /><br />
-                <button type="button" onclick="madInput()" class="btn btn-primary me-3">Submit My MadLib</button>
-                <button type="button" id="resetButton" class="btn btn-outline-primary">Reset</button>
-            </form>
+            <label for="adjective">Adjective</label><br />
+            <input type="text" id="adjective" class="text field" /><br />
+            <label for="noun">Noun</label><br />
+            <input type="text" id="noun" class="text field" /><br />
+            <label for="verb">Verb</label><br />
+            <input type="text" id="verb" class="text field" />
+            <br /><br />
+            <button type="button" onclick="madInput()" class="btn btn-primary me-3">Submit My MadLib</button>
+            <button type="button" onclick="clearArray()" id="resetButton" class="btn btn-outline-primary">Reset</button>
         </div>
         <div class="complete mt-4">
             <h2 class="madlibhead">Check out your completed MadLib!</h2>
