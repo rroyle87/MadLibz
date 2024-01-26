@@ -27,5 +27,5 @@ function generateMadLib(inputArray) {
 }
 
 function clearArray() {
-  inputArray = [];
+  document.getElementById("form").reset();
 }
